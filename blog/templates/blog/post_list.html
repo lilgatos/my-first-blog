@@ -10,11 +10,29 @@
       <h1><a href="/">Django Girls Blog</a></h1>
     </div>
 
+
+###<QuerySet [<Post: My second post>, <Post: My first post>]>
+
+
+
+
     <div>
-        <p>published: 02.03.2019, 15:20</p>
-        <h2><a href="">My first post</a></h2>
-        <p>Aenean eu leo quam, Pellentesque ornare, done</p>
+        <p>published: 02.03.2019, 15:20 </p>
+        <h2><a href=""> My first post </a></h2>
+        <p> Aenean eu leo quam, Pellentesque ornare, done </p>
     </div>
+
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
   </body>
   </html>
